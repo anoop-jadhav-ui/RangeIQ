@@ -1,0 +1,212 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Prevent flash of unstyled content */
+html {
+  font-size: 16px !important;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+/* iOS-style base styles */
+@layer base {
+  :root {
+    --ios-blue: #007aff;
+    --ios-green: #34c759;
+    --ios-orange: #ff9500;
+    --ios-red: #ff3b30;
+    --ios-gray-1: #8e8e93;
+    --ios-gray-6: #f2f2f7;
+    --background-primary: #f2f2f7;
+    --background-secondary: #ffffff;
+    --text-primary: #000000;
+    --text-secondary: #8e8e93;
+  }
+
+  .dark {
+    --background-primary: #000000;
+    --background-secondary: #1c1c1e;
+    --text-primary: #ffffff;
+    --text-secondary: #8e8e93;
+  }
+
+  html {
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display",
+      "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply bg-background-primary text-black dark:bg-background-dark-primary dark:text-white;
+    overscroll-behavior: none;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* iOS-style selection */
+  ::selection {
+    background-color: rgba(0, 122, 255, 0.3);
+  }
+
+  /* Hide scrollbar but allow scrolling */
+  .hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@layer components {
+  /* iOS Navigation Bar */
+  .ios-navbar {
+    @apply sticky top-0 z-50 px-4 py-3 backdrop-blur-ios;
+    background-color: rgba(249, 249, 249, 0.94);
+  }
+
+  .dark .ios-navbar {
+    background-color: rgba(28, 28, 30, 0.94);
+  }
+
+  /* iOS Card */
+  .ios-card {
+    @apply bg-white dark:bg-background-dark-secondary rounded-ios-card shadow-ios-card;
+  }
+
+  /* iOS List Group */
+  .ios-list-group {
+    @apply bg-white dark:bg-background-dark-secondary rounded-ios-md overflow-hidden;
+  }
+
+  .ios-list-item {
+    @apply flex items-center justify-between px-4 py-3 border-b border-ios-gray-5 dark:border-gray-700 last:border-b-0;
+  }
+
+  /* iOS Button */
+  .ios-button-primary {
+    @apply bg-ios-blue text-white font-semibold py-3 px-6 rounded-ios-md;
+    @apply active:opacity-80 transition-opacity duration-150;
+  }
+
+  .ios-button-secondary {
+    @apply bg-ios-gray-6 dark:bg-background-dark-tertiary text-ios-blue font-semibold py-3 px-6 rounded-ios-md;
+    @apply active:opacity-80 transition-opacity duration-150;
+  }
+
+  /* iOS Toggle */
+  .ios-toggle {
+    @apply relative w-[51px] h-[31px] rounded-full transition-colors duration-300;
+  }
+
+  .ios-toggle-thumb {
+    @apply absolute top-[2px] left-[2px] w-[27px] h-[27px] bg-white rounded-full shadow-md transition-transform duration-300;
+  }
+
+  /* iOS Segmented Control */
+  .ios-segmented {
+    @apply flex bg-ios-gray-6 dark:bg-background-dark-tertiary rounded-ios-sm p-0.5;
+  }
+
+  .ios-segmented-item {
+    @apply flex-1 py-1.5 px-3 text-center text-ios-subhead font-medium rounded-[6px] transition-all duration-200;
+  }
+
+  .ios-segmented-item-active {
+    @apply bg-white dark:bg-background-dark-secondary shadow-ios-sm;
+  }
+
+  /* iOS Slider */
+  .ios-slider {
+    @apply w-full h-1 bg-ios-gray-5 dark:bg-gray-600 rounded-full appearance-none;
+  }
+
+  .ios-slider::-webkit-slider-thumb {
+    @apply appearance-none w-7 h-7 bg-white rounded-full shadow-lg cursor-pointer;
+  }
+
+  /* Range Ring */
+  .range-ring {
+    @apply relative flex items-center justify-center;
+  }
+
+  .range-ring-circle {
+    stroke-linecap: round;
+    transition: stroke-dashoffset 0.5s ease-in-out;
+  }
+
+  /* Blur backdrop for modals */
+  .ios-modal-backdrop {
+    @apply fixed inset-0 bg-black/40 backdrop-blur-sm z-50;
+  }
+
+  /* iOS Sheet */
+  .ios-sheet {
+    @apply fixed bottom-0 left-0 right-0 bg-white dark:bg-background-dark-secondary rounded-t-[20px] z-50;
+    @apply transform transition-transform duration-300 ease-out;
+  }
+
+  .ios-sheet-handle {
+    @apply w-9 h-1 bg-ios-gray-3 dark:bg-gray-600 rounded-full mx-auto my-2;
+  }
+}
+
+@layer utilities {
+  /* Safe area utilities */
+  .safe-top {
+    padding-top: env(safe-area-inset-top);
+  }
+
+  .safe-bottom {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+
+  .safe-left {
+    padding-left: env(safe-area-inset-left);
+  }
+
+  .safe-right {
+    padding-right: env(safe-area-inset-right);
+  }
+
+  /* iOS-style text truncation */
+  .truncate-ios {
+    @apply truncate;
+    max-width: 100%;
+  }
+
+  /* Haptic feedback visual */
+  .haptic-tap {
+    @apply active:scale-95 transition-transform duration-75;
+  }
+
+  /* Glass effect */
+  .glass {
+    @apply backdrop-blur-ios bg-white/80 dark:bg-black/80;
+  }
+}
+
+/* Leaflet map overrides for iOS style */
+.leaflet-container {
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display",
+    "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
+  border-radius: 12px;
+}
+
+.leaflet-control-zoom {
+  border: none !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12) !important;
+  border-radius: 10px !important;
+  overflow: hidden;
+}
+
+.leaflet-control-zoom a {
+  background-color: rgba(255, 255, 255, 0.94) !important;
+  color: #007aff !important;
+  border: none !important;
+}
+
+.dark .leaflet-control-zoom a {
+  background-color: rgba(28, 28, 30, 0.94) !important;
+}

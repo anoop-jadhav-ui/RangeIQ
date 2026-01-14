@@ -1,0 +1,76 @@
+name: nexon_ev_range
+description: Tata Nexon EV Range Prediction App with iOS-style Cupertino design
+publish_to: "none"
+version: 1.0.0+1
+
+environment:
+  sdk: ">=3.2.0 <4.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # UI Components
+  cupertino_icons: ^1.0.6
+  fl_chart: ^0.66.0
+
+  # State Management
+  flutter_riverpod: ^2.5.0
+  riverpod_annotation: ^2.3.0
+
+  # Bluetooth (OBD-II)
+  flutter_blue_plus: ^1.31.0
+
+  # Location & Maps
+  geolocator: ^11.0.0
+  flutter_map: ^6.1.0
+  latlong2: ^0.9.0
+
+  # Local Storage & Offline
+  isar: ^3.1.0
+  isar_flutter_libs: ^3.1.0
+  path_provider: ^2.1.0
+  connectivity_plus: ^5.0.0
+  flutter_cache_manager: ^3.3.0
+
+  # Networking
+  dio: ^5.4.0
+
+  # Security
+  flutter_secure_storage: ^9.0.0
+
+  # Authentication
+  sign_in_with_apple: ^5.0.0
+  google_sign_in: ^6.2.0
+
+  # Utilities
+  intl: ^0.19.0
+  uuid: ^4.2.0
+  collection: ^1.18.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.0
+  riverpod_generator: ^2.3.0
+  build_runner: ^2.4.0
+  isar_generator: ^3.1.0
+
+flutter:
+  uses-material-design: false
+
+  assets:
+    - assets/images/
+    - assets/data/
+    - assets/maps/
+
+  fonts:
+    - family: SF Pro Display
+      fonts:
+        - asset: assets/fonts/SF-Pro-Display-Regular.otf
+        - asset: assets/fonts/SF-Pro-Display-Medium.otf
+          weight: 500
+        - asset: assets/fonts/SF-Pro-Display-Semibold.otf
+          weight: 600
+        - asset: assets/fonts/SF-Pro-Display-Bold.otf
+          weight: 700

@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+  <rect width="512" height="512" rx="102" fill="#007AFF"/>
+  <g transform="translate(80, 80)">
+    <!-- Car body -->
+    <path d="M50 220 L302 220 L302 140 L272 90 L80 90 L50 140 Z" fill="white"/>
+    <!-- Windows -->
+    <path d="M95 140 L257 140 L232 100 L120 100 Z" fill="#007AFF" opacity="0.3"/>
+    <!-- Wheels -->
+    <circle cx="110" cy="220" r="35" fill="white"/>
+    <circle cx="110" cy="220" r="18" fill="#007AFF"/>
+    <circle cx="242" cy="220" r="35" fill="white"/>
+    <circle cx="242" cy="220" r="18" fill="#007AFF"/>
+    <!-- Battery indicator -->
+    <rect x="125" y="150" width="102" height="42" rx="6" fill="#34C759"/>
+    <rect x="227" y="160" width="8" height="22" rx="2" fill="#34C759"/>
+    <!-- Lightning bolt -->
+    <path d="M165 158 L150 180 L172 180 L158 202 L190 174 L168 174 L182 158 Z" fill="white"/>
+  </g>
+  <!-- Text -->
+  <text x="256" y="400" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="48" font-weight="600" fill="white">Nexon EV</text>
+</svg>
